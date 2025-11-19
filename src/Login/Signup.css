@@ -1,0 +1,28 @@
+.Signupcontainer{
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    background-color: yellow;
+    height: 90vh;
+}
+
+.Signupcontainer input{
+    margin: 5px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+.submit{
+    background-color: blue;
+    color: white;
+    margin: 20%;
+    padding-left:2rem ;
+    padding-right: 2rem;
+        border-radius: 10px;
+        background-color: red;
+
+}

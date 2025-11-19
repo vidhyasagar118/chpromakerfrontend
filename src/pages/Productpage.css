@@ -1,0 +1,79 @@
+/* MAIN PAGE CONTAINER */
+.Productpagemaindiv {
+    margin-top: 12vh;
+    background-color: #111;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* MAIN SECTION WRAPPER */
+#girlsproductmaindiv,
+#boysproductmaindiv {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+/* GRID SYSTEM FOR BOTH BOYS & GIRLS PRODUCTS */
+#visiblegirlproduct,
+#visibleboyproduct {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.8rem;
+    justify-items: center;
+    width: 100%;
+}
+
+/* HEADINGS */
+#girlsproductmaindiv h1,
+#boysproductmaindiv h1 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* SHOW PRODUCT BOX RESPONSIVENESS */
+#showgirlproductdiv,
+#showboyproductdiv {
+    width: 100%;
+    max-width: 250px;
+}
+
+/* MOBILE RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .Productpagemaindiv {
+        padding: 1rem;
+    }
+
+    #girlsproductmaindiv h1,
+    #boysproductmaindiv h1 {
+        text-align: center;
+    }
+
+    #visiblegirlproduct,
+    #visibleboyproduct {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #visiblegirlproduct,
+    #visibleboyproduct {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    #showgirlproductdiv img,
+    #showboyproductdiv img {
+        height: 170px !important;
+    }
+}
+
+h1{
+    color: red;
+}

@@ -1,0 +1,77 @@
+.Mydata{
+margin-top: 12vh;
+text-align: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.Mydata h1{
+  color: white;
+}
+
+.mydataoptiondiv,.tabContent{
+    margin-top:5vh;
+    background-color: white;
+}
+
+.mydataoptiondiv ul li{
+
+    padding: 10px;
+list-style: none;
+color: black;
+}
+
+  
+
+.mydataoptiondiv ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.mydataoptiondiv ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.mydataoptiondiv ul li a:hover {
+  background-color: #ddd;
+}
+
+.mydataoptiondiv ul li .active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tabContent {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.datatable {
+  border-collapse: collapse;
+  width: 70%;
+  text-align: center;
+}
+
+.datatable th, .datatable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.datatable th {
+  background-color: #007bff;
+  color: white;
+}
+
+.datatable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

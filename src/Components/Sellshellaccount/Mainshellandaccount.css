@@ -1,0 +1,19 @@
+.Mainshellandaccount{
+    margin-top:5rem;
+    background-color: black;
+    color: blue ;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Mainshellandaccount button{
+width: 10vw;
+padding: 1rem;
+margin: 1rem;
+background-color: aqua;
+color: black;
+border-radius: 1rem;
+}

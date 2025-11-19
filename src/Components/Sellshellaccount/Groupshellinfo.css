@@ -1,0 +1,12 @@
+.Groupshellinfomaindiv {
+  margin-top: 12vh;
+  padding: 20px;
+}
+
+.box {
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  width: 300px;
+}

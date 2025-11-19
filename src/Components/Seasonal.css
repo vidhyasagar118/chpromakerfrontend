@@ -1,0 +1,103 @@
+/* ---------- Main Container ---------- */
+.maindiv {
+  width: 90vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.old-price{
+   text-decoration: line-through;
+    color: #777;
+}
+
+/* ---------- Category Box ---------- */
+.seasonalmaindiv {
+  flex: 0 1 calc(33.33% - 20px);
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.seasonalmaindiv h5 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- Inner Grid ---------- */
+.Seasonaldivinnerdiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* ---------- Product Card ---------- */
+.seasonalproductdiv {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;   /* perfect size fix */
+  background: #f8f8f8;
+  border: 2px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-between;
+  transition: .25s ease;
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+
+.seasonalproductdiv:hover {
+  transform: scale(1.04);
+}
+
+/* Image */
+.seasonalproductdiv img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+/* Text */
+.seasonalproductdiv h3 {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.seasonalproductdiv p {
+  text-align: center;
+  color:black;
+  font-weight: bold;
+}
+
+
+/* ---------- Trycard Box ---------- */
+.trycontainer {
+  flex: 0 1 calc(33.33% - 20px);
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .seasonalmaindiv,
+  .trycontainer {
+    flex: 0 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .seasonalmaindiv,
+  .trycontainer {
+    flex: 0 1 100%;
+  }
+
+  .Seasonaldivinnerdiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

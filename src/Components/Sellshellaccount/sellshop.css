@@ -1,0 +1,54 @@
+.Sellshop{
+    margin-top:5rem;
+    background-color: black;
+    color: blue ;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+ .Sellshopproinfo{
+width: auto;
+padding: 1rem;
+margin: 1rem;
+background-color: aqua;
+color: black;
+display: inline-flex;
+}
+.Sellshopproinfo span{
+margin:10px;
+}
+
+
+
+.Sellshop h2 {
+  color: yellow;
+  margin-bottom: 2rem;
+}
+
+.Sellshop table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.Sellshop th, .Sellshop td {
+  border: 2px solid yellow;
+  padding: 1rem;
+}
+
+.Sellshop th {
+  background-color: aqua;
+  color: black;
+  font-weight: bold;
+}
+
+.Sellshop tr:hover {
+  background-color: #222;
+  transition: 0.3s;
+}

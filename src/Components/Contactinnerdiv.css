@@ -1,0 +1,17 @@
+.contactinnerdiv{
+    background-color: purple;
+    color: white;
+padding: 5rem;
+}
+.contactinnerdiv input,textarea{
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius:10px;
+}
+.contactinnerdiv  button{
+    background-color: aqua;
+    color: black;
+    display: flex;
+    margin-left: 35%;
+    padding: 0.5rem;
+}

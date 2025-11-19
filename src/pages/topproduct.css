@@ -1,0 +1,72 @@
+.topproductmain {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+    padding: 1rem;
+}
+.old-price{
+    text-decoration: line-through;
+}
+.topproductmain h2 {
+    color: black;
+    margin-left: 1rem;
+}
+
+.topproductul {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;         
+    padding: 0;
+}
+
+.topproductul li {
+    list-style: none;
+    font-size: 1.1rem;
+    margin: 1rem;
+    padding: 1rem;
+    width: 250px;           
+    text-align: center;
+    color: black;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.topproductul li:hover {
+    transform: translateY(-5px);
+}
+
+.Topproductliimg {
+    width: 100%;
+    max-width: 160px;
+    transition: transform 0.3s ease;
+}
+
+.Topproductliimg:hover {
+    transform: scale(1.15);
+}
+
+/* ---------------- RESPONSIVE BREAKPOINTS ---------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .topproductul li {
+        width: 45%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .topproductul {
+        justify-content: center;
+    }
+
+    .topproductul li {
+        width: 90%;
+        margin: 0.5rem 0;
+    }
+
+    .Topproductliimg {
+        max-width: 200px;
+    }
+}

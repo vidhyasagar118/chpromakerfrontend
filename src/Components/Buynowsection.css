@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+}
+.closebtn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  float: right;
+  border-radius: 5px;
+}
+
+.paybtn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 18px;
+  display: block;      
+  margin: 20px auto;   
+  cursor: pointer;
+}
