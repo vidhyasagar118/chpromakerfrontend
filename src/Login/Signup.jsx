@@ -15,13 +15,15 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ✅ Correct backend URL
-const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/signup`, form);
-      setMessage(res.data.message || "Signup successful ✅");
+      // ✅ Render backend URL
+      const res = await axios.post(
+        "https://chpromaker-backend.onrender.com/api/signup",
+        form
+      );
 
+      setMessage(res.data.message || "Signup successful ✅");
       setForm({ name: "", email: "", password: "" });
 
-      // Redirect to login page
       setTimeout(() => {
         navigate("/login");
       }, 1500);

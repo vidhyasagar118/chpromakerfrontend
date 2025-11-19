@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
@@ -14,14 +15,15 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ✅ Correct API endpoint
-const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, form);
-      // ✅ Save token to localStorage
-      localStorage.setItem("token", res.data.token);
+      // ✅ Render backend URL
+      const res = await axios.post(
+        "https://chpromaker-backend.onrender.com/api/login",
+        form
+      );
 
+      localStorage.setItem("token", res.data.token);
       setMessage("Login Successful ✅");
 
-      // ✅ Redirect to home after login
       navigate("/");
     } catch (err) {
       setMessage(err.response?.data?.message || "Login failed ❌");
@@ -30,9 +32,7 @@ const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, form);
 
   return (
     <div className="Logincontainer">
-<h2 >
-  Login
-</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="email"
@@ -40,7 +40,7 @@ const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, form);
           placeholder="Email"
           onChange={handleChange}
           required
-        />{" "}
+        />
         <br />
         <input
           name="password"
