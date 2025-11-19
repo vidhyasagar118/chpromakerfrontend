@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
     try {
       // ✅ Correct API endpoint
-const res = await axios.post("https://your-backend.onrender.com/api/login", form);
+const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, form);
       // ✅ Save token to localStorage
       localStorage.setItem("token", res.data.token);
 

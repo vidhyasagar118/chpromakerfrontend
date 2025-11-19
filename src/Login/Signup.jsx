@@ -16,7 +16,7 @@ function Signup() {
     e.preventDefault();
     try {
       // ✅ Correct backend URL
-onst res = await axios.post("https://your-backend.onrender.com/api/signup", form);
+const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/signup`, form);
       setMessage(res.data.message || "Signup successful ✅");
 
       setForm({ name: "", email: "", password: "" });
