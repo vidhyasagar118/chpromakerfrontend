@@ -1,89 +1,70 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "./Signup.css";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
-function Signup() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
-  const [message, setMessage] = useState("");
+const Signup = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
-      // ✅ Render backend URL
-      const res = await axios.post(
-        "https://chpromaker-backend.onrender.com/api/signup",
-        form
-      );
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-      setMessage(res.data.message || "Signup successful ✅");
-      setForm({ name: "", email: "", password: "" });
+      const data = await res.json();
 
-      setTimeout(() => {
+      if (res.status === 201) {
+        alert("Signup successful! Please login.");
         navigate("/login");
-      }, 1500);
+      } else {
+        setError(data.message);
+      }
     } catch (err) {
-      setMessage(err.response?.data?.message || "Signup failed ❌");
+      setError("Signup failed. Please try again later.");
     }
   };
 
   return (
-    <div className="Signupcontainer">
-      <h2>Create Account</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Sign Up</h2>
         <input
-          name="name"
           placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
         />
-        <br />
         <input
-          name="email"
-          type="email"
           placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <br />
         <input
-          name="password"
-          type="password"
           placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <br />
-        <button className="submit" type="submit">
-          Signup
-        </button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <button type="submit">Sign Up</button>
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </form>
-      <p>{message}</p>
-      <p>
-        Already have an account?{" "}
-        <button
-          onClick={() => navigate("/login")}
-          style={{
-            background: "none",
-            color: "blue",
-            border: "none",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Login here
-        </button>
-      </p>
     </div>
   );
-}
+};
 
 export default Signup;

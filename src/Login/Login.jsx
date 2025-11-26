@@ -1,78 +1,64 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-function Login() {
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
-      
-      // ✅ Render backend URL
-      const res = await axios.post(
-        "https://chpromaker-backend.onrender.com/api/login",
-        form
-      );
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      localStorage.setItem("token", res.data.token);
-      setMessage("Login Successful ✅");
+      const data = await res.json();
 
-      navigate("/");
+      if (res.status === 200) {
+        localStorage.setItem("token", data.token); // save token for auth
+        alert("Login successful!");
+        navigate("/"); // redirect to home/dashboard
+      } else {
+        setError(data.message);
+      }
     } catch (err) {
-      setMessage(err.response?.data?.message || "Login failed ❌");
+      setError("Login failed. Please try again later.");
     }
   };
 
   return (
-    <div className="Logincontainer">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
         <input
-          name="email"
-          type="email"
           placeholder="Email"
-          onChange={handleChange}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <br />
         <input
-          name="password"
-          type="password"
           placeholder="Password"
-          onChange={handleChange}
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <br />
-        <button className="submit" type="submit">
-          Login
-        </button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <button type="submit">Login</button>
+        <p>
+          New here? <Link to="/signup">Create an account</Link>
+        </p>
       </form>
-      <p>{message}</p>
-      <p>
-        Don't have an account?{" "}
-        <button
-          onClick={() => navigate("/signup")}
-          style={{
-            background: "none",
-            color: "blue",
-            border: "none",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Register
-        </button>
-      </p>
     </div>
   );
-}
+};
 
 export default Login;
