@@ -15,6 +15,7 @@ import Mydata from './Components/Sellshellaccount/Mydata';
 import Cart from './Components/Cart';
 import Groupshellinfo from './Components/Sellshellaccount/Groupshellinfo';
 import Productmainselect from './Components/Productmainselect';
+import Sellshop from './Components/Sellshellaccount/Sellshop';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -39,6 +40,7 @@ const App = () => {
         <Route path='signup' element={<Signup />} />
         <Route path='login' element={<Login />} />
         <Route path='mainshellandaccount' element={<Mainshellandaccount />} />
+        <Route path='sellshop' element={<Sellshop />} />
         <Route path='mydata' element={<Mydata />} />
         <Route path='productmainselect' element={<Productmainselect />} />
         <Route path='groupshellinfo' element={<Groupshellinfo />} />
