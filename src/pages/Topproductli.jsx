@@ -20,7 +20,7 @@ const Topproductli = ({ name, src, price }) => {
 
   return (
     <li onClick={goToProduct} style={{ cursor: "pointer" }}>
-      <img className='Topproductliimg' style={{ width: '10vw' }} src={src} alt="pro-img" />
+      <img className='Topproductliimg' style={{ width: '15vw' }} src={src} alt="pro-img" />
       <h5>{name}</h5>
    <b>   <h4>{realPrice}</h4></b> 
        <p className='old-price'>{oldPrice}</p>
