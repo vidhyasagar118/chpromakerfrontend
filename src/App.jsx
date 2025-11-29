@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import Product from './pages/Productpage'
-import Contactlayout from './layout/contactlayout'
+import Contactlayout from './layout/Contactlayout';
 import About from './pages/About'
 import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
 import Rootlayout from './layout/Rootlayout'
