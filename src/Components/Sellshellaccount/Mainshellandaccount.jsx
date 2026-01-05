@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import "./Mainshellandaccount.css";
-import Sellshop from './sellshop';
+import Sellshop from './Sellshop.jsx';
 import Mydata from './Mydata';
 import Groupshellinfo from './Groupshellinfo';
 const Mainshellandaccount = () => {
