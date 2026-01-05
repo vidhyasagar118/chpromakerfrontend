@@ -15,7 +15,7 @@ import Mydata from './Components/Sellshellaccount/Mydata'
 import Cart from './Components/Cart'
 import Groupshellinfo from './Components/Sellshellaccount/Groupshellinfo'
 import Productmainselect from './Components/Productmainselect'
-import Sellshop from './Components/Sellshellaccount/Sellshop';
+import Sellshop from './Components/Sellshellaccount/Sellshop.jsx';
 const App = () => { 
   const router = createBrowserRouter(
     createRoutesFromElements(
