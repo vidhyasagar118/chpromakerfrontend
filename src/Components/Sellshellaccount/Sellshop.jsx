@@ -1,5 +1,5 @@
 import React from 'react';
-import './Sellshop.css';
+import './sellshop.css';
 
 const Sellshop = () => {
   const products = [
