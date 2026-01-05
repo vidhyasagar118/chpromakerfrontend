@@ -1,5 +1,5 @@
 import React from 'react';
-import "./productpage.css";
+import "./Productpage.css";
 
 import Girlproductmaindiv from '../Components/Girlproducts/Girlproductmaindiv';
 import Boysproductmaindiv from '../Components/Boysproduct/Boysproductmaindiv';
