@@ -3,13 +3,10 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import Mainnavbar from './Mainnavbar';
 import Cart from './Cart';
 const Navbar = () => {
-  const [value, setValue] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
+  
 
   return (
     <>
@@ -18,16 +15,7 @@ const Navbar = () => {
  <div   className='showbtn'  onClick={() => setShowMenu(!showMenu)}>
           <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/menu-bar-icon-svg-download-png-8389626.png?f=webp&w=128" width="30px"  />
         </div>
-        <div className='searchbox'>
-          <input
-            id="searchinp"
-            type="text"
-            placeholder='searchbox'
-            value={value}
-            onChange={handleChange}
-          />
-          <button>search</button>
-        </div>
+
         <button className='loginbtn' onClick={() => navigate('/login', { replace: true })}>
           <span className="icon-box">
             <i className="uil uil-user-circle"></i>
